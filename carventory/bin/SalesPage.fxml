@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="708.0" prefWidth="1204.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SalesPageController">
+   <children>
+      <ImageView fitHeight="708.0" fitWidth="1251.0" layoutX="-4.0" layoutY="6.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../../home%20ni%20josh%20(2).png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="salesTable" layoutX="122.0" layoutY="252.0" prefHeight="420.0" prefWidth="993.0">
+         <columns>
+            <TableColumn fx:id="salesIDColumn" prefWidth="145.3333282470703" text="Sales ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="id" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="carIDColumn" prefWidth="163.66668701171875" text="Car ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="brand" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="quantitySoldColumn" prefWidth="276.33331298828125" text="Quantity Sold">
+               <cellValueFactory>
+                  <PropertyValueFactory property="model" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="totalAmountSoldColumn" minWidth="0.0" prefWidth="204.6666259765625" text="Total Amount">
+               <cellValueFactory>
+                  <PropertyValueFactory property="yearModel" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="saleDateColumn" prefWidth="201.3333740234375" text="Sale Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="transmission" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <HBox layoutX="694.0" layoutY="136.0" />
+      <Button layoutX="535.0" layoutY="65.0" onAction="#goToCarPage" style="-fx-background-color: 0;" stylesheets="@style/button2.css" text="Inventory">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="670.0" layoutY="65.0" onAction="#handleLogout" prefHeight="27.0" prefWidth="69.0" style="-fx-background-color: 0;" stylesheets="@style/button2.css" text="Log out">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="623.0" layoutY="69.0" text="Sales" textFill="#890304">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

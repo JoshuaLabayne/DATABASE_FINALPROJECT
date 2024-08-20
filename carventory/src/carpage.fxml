@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="708.0" prefWidth="1204.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarPageController">
+    <children>
+      <ImageView fitHeight="708.0" fitWidth="1251.0" layoutX="-4.0" layoutY="6.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../../home%20ni%20josh%20(1).png" />
+         </image>
+      </ImageView>
+
+        <!-- Table view for displaying inventory items -->
+        <TableView fx:id="carTable" layoutX="101.0" layoutY="370.0" prefHeight="322.0" prefWidth="1046.0">
+            <columns>
+                <TableColumn fx:id="carIDColumn" prefWidth="55.0" text="Car ID">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="adminIDColumn" prefWidth="68.0" text="Admin ID">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="brand" />
+                    </cellValueFactory>
+                </TableColumn>
+            <TableColumn fx:id="imageColumn" prefWidth="95.0" text="Image" />
+                <TableColumn fx:id="carModelColumn" prefWidth="103.0" text="Car Model">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="model" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="yearModelColumn" prefWidth="91.0" text="Year Model">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="yearModel" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="transmissionColumn" prefWidth="93.0" text="Transmission">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="transmission" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colorColumn" prefWidth="70.0" text="Color">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="color" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="bodyTypeColumn" prefWidth="97.0" text="Body Type">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="priceColumn" prefWidth="120.0" text="Price">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="price" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="quantityColumn" prefWidth="90.0" text="Quantity">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="quantity" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="soldColumn" prefWidth="61.0" text="Sold">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="seats" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="nextRestockColumn" prefWidth="102.0" text="Next Restock">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="odometer" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+         <Button layoutX="865.0" layoutY="326.0" onAction="#handleEdit" prefHeight="22.0" prefWidth="62.0" style="-fx-background-radius: 8;" stylesheets="@style/button.css" text="Edit " textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Button>
+         <Button layoutX="937.0" layoutY="326.0" onAction="#handleSaveEdit" style="-fx-background-radius: 8;" stylesheets="@style/button.css" text="Save Edit" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Button>
+         <Button fx:id="addItemButton" layoutX="793.0" layoutY="326.0" onAction="#handleSubmit" prefHeight="22.0" prefWidth="62.0" style="-fx-background-radius: 8;" stylesheets="@style/button.css" text="Submit" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Button>
+        <HBox layoutX="694.0" layoutY="136.0" />
+         <TextField fx:id="searchField" layoutX="445.0" layoutY="120.0" onKeyReleased="#handleSearch" prefHeight="33.0" prefWidth="354.0" style="-fx-background-radius: 15; -fx-background-color: #EEEEF0;" />
+         <Label layoutX="985.0" layoutY="210.0" text="Quantity:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <TextField fx:id="quantityField" layoutX="1039.0" layoutY="208.0" prefHeight="21.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+         <Label layoutX="962.0" layoutY="271.0" text="Next Restock:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <Label layoutX="535.0" layoutY="69.0" text="Inventory" textFill="#890304">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></Label>
+         <TextField fx:id="carModelField" layoutX="671.0" layoutY="208.0" prefHeight="21.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+         <Label layoutX="604.0" layoutY="240.0" text="Year Model:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <TextField fx:id="yearModelField" layoutX="671.0" layoutY="238.0" prefHeight="21.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+         <Label layoutX="637.0" layoutY="270.0" text="Price:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <TextField fx:id="priceField" layoutX="671.0" layoutY="268.0" prefHeight="21.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+         <Label layoutX="793.0" layoutY="242.0" text="Body Type:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <Label layoutX="780.0" layoutY="271.0" text="Transmission:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <Label layoutX="819.0" layoutY="210.0" text="Color:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <Label layoutX="1006.0" layoutY="240.0" text="Sold:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+         <TextField fx:id="soldField" layoutX="1039.0" layoutY="238.0" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;">
+         <font>
+            <Font size="10.0" />
+         </font></TextField>
+         <Label layoutX="631.0" layoutY="300.0" text="Image:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Label>
+      <DatePicker fx:id="nextRestockField" layoutX="1039.0" layoutY="267.0" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;" />
+      <Button layoutX="1009.0" layoutY="326.0" onAction="#handleSell" prefHeight="22.0" prefWidth="62.0" style="-fx-background-radius: 8;" stylesheets="@style/button.css" text="Sell" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="transmissionComboBox" layoutX="855.0" layoutY="267.0" prefHeight="0.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;" />
+      <ComboBox fx:id="colorComboBox" layoutX="855.0" layoutY="206.0" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;" />
+      <ComboBox fx:id="bodyTypeComboBox" layoutX="855.0" layoutY="237.0" prefHeight="6.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;" />
+      <Button layoutX="671.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleUploadImage" prefHeight="24.0" prefWidth="91.0" style="-fx-background-color: #EEEEF0;" text="Upload Image">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="614.0" layoutY="65.0" onAction="#goToSalesPage" prefHeight="27.0" prefWidth="48.0" style="-fx-background-color: 0;" stylesheets="@style/button2.css" text="Sales">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="1082.0" layoutY="326.0" onAction="#handleDelete" prefHeight="22.0" prefWidth="62.0" style="-fx-background-radius: 8;" stylesheets="@style/button.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="758.0" layoutY="124.0" preserveRatio="true">
+         <image>
+            <Image url="@images/search.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="670.0" layoutY="65.0" onAction="#handleLogout" prefHeight="27.0" prefWidth="69.0" style="-fx-background-color: 0;" stylesheets="@style/button2.css" text="Log out">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="629.0" layoutY="211.0" text="Model:">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageView" fitHeight="33.0" fitWidth="39.0" layoutX="774.0" layoutY="298.0" preserveRatio="true" />
+      <Label fx:id="resultLabel" layoutX="101.0" layoutY="349.0" prefHeight="17.0" prefWidth="216.0" />
+    </children>
+</AnchorPane>
